@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EZjobhop | Staffing & Consulting Services</title>
+  <meta name="description" content="EZjobhop connects organizations with skilled talent through IT staffing, healthcare staffing, public sector staffing, administrative support, contract-to-hire, temp hire, and direct hire solutions." />
+  <meta name="keywords" content="staffing services, IT consulting, IT staffing, contract to hire, temp hire, direct hire, healthcare staffing, administrative staffing, public sector staffing" />
+  <meta name="author" content="EZjobhop" />
+  <link rel="canonical" href="https://ezjobhop.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EZjobhop | Connecting Talent. Driving Success." />
+  <meta property="og:description" content="Simple, responsive staffing and consulting support for organizations that need the right people in the right seats." />
+  <meta property="og:url" content="https://ezjobhop.com/" />
+  <meta property="og:image" content="https://ezjobhop.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EZjobhop | Connecting Talent. Driving Success." />
+  <meta name="twitter:description" content="Staffing and consulting support for IT, public sector, healthcare, and administrative teams." />
+  <meta name="twitter:image" content="https://ezjobhop.com/assets/og-image.png" />
+
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <style>
+    :root {
+      --navy: #061b4f;
+      --blue: #0072ce;
+      --green: #5cc62a;
+      --ink: #14213d;
+      --muted: #5c677d;
+      --line: #dbe5f2;
+      --soft: #f7fbff;
+      --card: #ffffff;
+      --shadow: 0 18px 45px rgba(6, 27, 79, .12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--soft);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      font-size: 14px;
+      padding: 10px 0;
+    }
+    .topbar .container { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .topbar a { opacity: .95; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 251, 255, .88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(219, 229, 242, .8);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.04em; color: var(--navy); font-size: 24px; }
+    .brand img { width: 52px; height: 52px; object-fit: contain; }
+    .navlinks { display: flex; align-items: center; gap: 22px; color: var(--muted); font-weight: 700; font-size: 15px; }
+    .navlinks a:hover { color: var(--blue); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(6, 27, 79, .16); }
+    .btn-primary { background: var(--green); color: white; }
+    .btn-secondary { background: white; color: var(--navy); border-color: var(--line); }
+    .btn-dark { background: var(--navy); color: white; }
+
+    .hero {
+      padding: 88px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(6px);
+      opacity: .75;
+      z-index: -1;
+    }
+    .hero::before { width: 420px; height: 420px; background: #e2f7d8; right: -160px; top: -120px; }
+    .hero::after { width: 350px; height: 350px; background: #e5f2ff; left: -180px; bottom: 20px; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 42px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font-weight: 900; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
+    .eyebrow span { width: 34px; height: 3px; background: var(--green); border-radius: 999px; }
+    h1 { margin: 14px 0 18px; font-size: clamp(42px, 6vw, 72px); line-height: .98; letter-spacing: -.06em; color: var(--navy); }
+    .lead { font-size: clamp(18px, 2vw, 22px); color: var(--muted); max-width: 660px; margin-bottom: 28px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 30px; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill { padding: 9px 12px; border: 1px solid var(--line); background: rgba(255,255,255,.72); border-radius: 999px; color: var(--navy); font-size: 14px; font-weight: 800; }
+
+    .hero-card {
+      background: white;
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 8px; background: linear-gradient(90deg, var(--blue), var(--green)); }
+    .hero-card img { margin: 0 auto 20px; max-height: 270px; object-fit: contain; }
+    .quick-card { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .metric { background: var(--soft); border: 1px solid var(--line); padding: 18px; border-radius: 18px; }
+    .metric strong { display: block; font-size: 28px; color: var(--navy); line-height: 1; }
+    .metric span { color: var(--muted); font-size: 13px; font-weight: 700; }
+
+    section { padding: 76px 0; }
+    .section-head { max-width: 760px; margin: 0 auto 34px; text-align: center; }
+    .section-head h2 { margin: 0 0 12px; font-size: clamp(32px, 4vw, 48px); color: var(--navy); letter-spacing: -.04em; line-height: 1.05; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 18px; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(6, 27, 79, .06);
+    }
+    .icon {
+      width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(0,114,206,.12), rgba(92,198,42,.18));
+      color: var(--navy); margin-bottom: 16px;
+    }
+    .card h3 { margin: 0 0 8px; color: var(--navy); font-size: 22px; line-height: 1.2; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .split { display: grid; grid-template-columns: .92fr 1.08fr; gap: 34px; align-items: center; }
+    .panel {
+      background: var(--navy);
+      color: white;
+      border-radius: 34px;
+      padding: 38px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .panel::after { content: "★"; position: absolute; right: 28px; top: 16px; color: var(--green); font-size: 82px; opacity: .35; }
+    .panel h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.08; margin: 0 0 14px; letter-spacing: -.04em; }
+    .panel p { color: rgba(255,255,255,.82); margin: 0 0 22px; }
+    .checklist { display: grid; gap: 12px; }
+    .check { display: flex; gap: 10px; align-items: flex-start; color: rgba(255,255,255,.9); font-weight: 700; }
+    .check b { color: var(--green); }
+
+    .process { counter-reset: step; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step { position: relative; background: white; border-radius: 22px; border: 1px solid var(--line); padding: 24px; }
+    .step::before { counter-increment: step; content: "0" counter(step); display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; background: var(--green); color: white; font-weight: 900; margin-bottom: 16px; }
+    .step h3 { margin: 0 0 6px; color: var(--navy); }
+    .step p { margin: 0; color: var(--muted); }
+
+    .contact-wrap { display: grid; grid-template-columns: .95fr 1.05fr; gap: 28px; align-items: stretch; }
+    .contact-card { background: white; border: 1px solid var(--line); border-radius: 28px; padding: 30px; box-shadow: 0 10px 28px rgba(6, 27, 79, .06); }
+    .contact-line { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .contact-line:last-child { border-bottom: 0; }
+    .contact-line strong { display: block; color: var(--navy); }
+    .contact-line span, .contact-line a { color: var(--muted); }
+    form { display: grid; gap: 14px; }
+    label { font-weight: 800; color: var(--navy); font-size: 14px; }
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 13px 14px;
+      font: inherit;
+      background: #fbfdff;
+      color: var(--ink);
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .note { color: var(--muted); font-size: 13px; margin: 10px 0 0; }
+
+    footer { background: var(--navy); color: white; padding: 34px 0; }
+    footer .container { display: flex; justify-content: space-between; gap: 18px; align-items: center; flex-wrap: wrap; }
+    footer img { width: 120px; height: auto; }
+    footer p { margin: 0; color: rgba(255,255,255,.75); }
+
+    @media (max-width: 860px) {
+      .navlinks { display: none; }
+      .hero-grid, .split, .contact-wrap { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .process { grid-template-columns: 1fr 1fr; }
+      section { padding: 58px 0; }
+      .hero { padding-top: 56px; }
+      .quick-card { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .process { grid-template-columns: 1fr; }
+      .topbar .container { display: block; }
+      .topbar span { display: block; margin-bottom: 4px; }
+      .brand { font-size: 20px; }
+      .brand img { width: 44px; height: 44px; }
+      .hero-card, .panel, .contact-card { padding: 24px; border-radius: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Staffing and consulting support for modern teams</span>
+      <span><a href="tel:+15139266663">(513) 926-6663</a> · <a href="#contact">Contact EZjobhop</a></span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="EZjobhop home">
+          <img src="assets/logo-mark.png" alt="EZjobhop logo mark" />
+          <span>EZjobhop</span>
+        </a>
+        <div class="navlinks">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#candidates">Candidates</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-primary" href="#contact">Get Started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span></span> Connecting Talent. Driving Success.</div>
+          <h1>The clean, simple way to find talent that fits.</h1>
+          <p class="lead">EZjobhop helps organizations move faster with reliable staffing and consulting support across IT, public sector, healthcare, and administrative roles.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Request Talent</a>
+            <a class="btn btn-secondary" href="#candidates">Submit Resume</a>
+          </div>
+          <div class="trust-row" aria-label="Service highlights">
+            <span class="pill">Contract-to-Hire</span>
+            <span class="pill">Temporary Staffing</span>
+            <span class="pill">Direct Hire</span>
+            <span class="pill">IT Consulting</span>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="EZjobhop brand card">
+          <img src="assets/logo-full.png" alt="EZjobhop full logo" />
+          <h2 style="margin:0;color:var(--navy);letter-spacing:-.03em;line-height:1.12;">Talent solutions built around your timeline.</h2>
+          <p style="color:var(--muted);margin:10px 0 0;">Whether you need short-term support, project-based specialists, or a permanent hire, we help identify candidates who match the role and the culture.</p>
+          <div class="quick-card">
+            <div class="metric"><strong>3</strong><span>Hiring models</span></div>
+            <div class="metric"><strong>4+</strong><span>Core industries</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Staffing and consulting services</h2>
+          <p>Simple support for teams that need skilled people without slowing down operations.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true">⌁</div>
+            <h3>IT Staffing & Consulting</h3>
+            <p>Connect with software developers, network engineers, cybersecurity specialists, data analysts, project managers, and other technology talent.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">◆</div>
+            <h3>Public Sector Staffing</h3>
+            <p>Support government and public-sector teams with qualified professionals across technical, administrative, policy, and project-based roles.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">✚</div>
+            <h3>Healthcare Staffing</h3>
+            <p>Source dependable healthcare and healthcare-adjacent professionals who can support patient care, operations, administration, and allied functions.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">☰</div>
+            <h3>Administrative Support</h3>
+            <p>Find executive assistants, office managers, data-entry staff, customer support representatives, HR coordinators, and similar operational roles.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">↔</div>
+            <h3>Flexible Hiring Models</h3>
+            <p>Use contract-to-hire, temporary, or direct-hire support depending on your workload, budget, risk tolerance, and long-term needs.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">✓</div>
+            <h3>Candidate Screening</h3>
+            <p>Reduce wasted interview time with a practical recruiting workflow focused on skills, fit, availability, and role alignment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="panel">
+          <h2>Why companies choose EZjobhop</h2>
+          <p>Hiring is expensive when the fit is wrong. Our job is to make the process easier, faster, and cleaner for both employers and candidates.</p>
+          <div class="checklist">
+            <div class="check"><b>✓</b><span>Practical staffing support for urgent and planned roles.</span></div>
+            <div class="check"><b>✓</b><span>Talent matching across technical, administrative, healthcare, and public sector needs.</span></div>
+            <div class="check"><b>✓</b><span>Clean communication, responsive coordination, and straightforward next steps.</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="section-head" style="text-align:left;margin:0 0 22px;">
+            <h2>Built for employers who need momentum.</h2>
+            <p>Use EZjobhop when you do not have time for a slow, bloated hiring process. We focus on understanding the role, narrowing the field, and helping you move with confidence.</p>
+          </div>
+          <a class="btn btn-dark" href="#contact">Talk to us about a role</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <h2>A straightforward hiring process</h2>
+          <p>No unnecessary complexity. Just a clear path from role requirements to qualified candidates.</p>
+        </div>
+        <div class="process">
+          <article class="step"><h3>Understand</h3><p>We clarify the role, skill requirements, timeline, location, and hiring model.</p></article>
+          <article class="step"><h3>Source</h3><p>We identify relevant talent for the position, project, or staffing need.</p></article>
+          <article class="step"><h3>Screen</h3><p>We evaluate fit so your team spends time with stronger candidates.</p></article>
+          <article class="step"><h3>Support</h3><p>We help coordinate next steps from interview through placement.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="candidates">
+      <div class="container split">
+        <div>
+          <div class="section-head" style="text-align:left;margin:0 0 22px;">
+            <h2>Looking for your next role?</h2>
+            <p>Send your resume and tell us what kind of opportunity you want. We support candidates across IT, healthcare, administrative, and public sector opportunities.</p>
+          </div>
+          <a class="btn btn-primary" href="mailto:datawizetechllc@gmail.com?subject=EZjobhop%20Resume%20Submission">Submit Your Resume</a>
+        </div>
+        <div class="card">
+          <h3>What to include</h3>
+          <p>Attach your resume, preferred job type, location preferences, target role, work authorization status if relevant, and earliest availability.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Start the conversation</h2>
+          <p>Tell us what kind of talent or opportunity you are looking for. We will follow up with the clearest next step.</p>
+        </div>
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <div class="contact-line">
+              <div class="icon" aria-hidden="true">☎</div>
+              <div><strong>Phone</strong><a href="tel:+15139266663">(513) 926-6663</a></div>
+            </div>
+            <div class="contact-line">
+              <div class="icon" aria-hidden="true">✉</div>
+              <div><strong>Email</strong><a href="mailto:datawizetechllc@gmail.com">datawizetechllc@gmail.com</a></div>
+            </div>
+            <div class="contact-line">
+              <div class="icon" aria-hidden="true">⌖</div>
+              <div><strong>Address</strong><span>519 Seneca Green Way, Great Falls, VA 22066, USA</span></div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <form action="mailto:datawizetechllc@gmail.com" method="post" enctype="text/plain">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="Name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="need">I am looking for</label>
+                <select id="need" name="Request Type">
+                  <option>Talent for my organization</option>
+                  <option>A new job opportunity</option>
+                  <option>General consulting support</option>
+                </select>
+              </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="Message" placeholder="Tell us about the role, project, timeline, or opportunity."></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+              <p class="note">This static form opens your email app. For a fully hosted form later, connect Formspree, Basin, Netlify Forms, or a CRM form endpoint.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <img src="assets/logo-mark.png" alt="EZjobhop mark" />
+      <p>© <span id="year"></span> EZjobhop. All rights reserved.</p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
