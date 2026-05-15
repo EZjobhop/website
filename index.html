@@ -178,25 +178,69 @@
     .step h3 { margin: 0 0 6px; color: var(--navy); }
     .step p { margin: 0; color: var(--muted); }
 
-    .contact-wrap { display: grid; grid-template-columns: .95fr 1.05fr; gap: 28px; align-items: stretch; }
+    .contact-wrap { display: grid; grid-template-columns: .92fr 1.08fr; gap: 28px; align-items: start; }
     .contact-card { background: white; border: 1px solid var(--line); border-radius: 28px; padding: 30px; box-shadow: 0 10px 28px rgba(6, 27, 79, .06); }
-    .contact-line { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--line); }
-    .contact-line:last-child { border-bottom: 0; }
-    .contact-line strong { display: block; color: var(--navy); }
-    .contact-line span, .contact-line a { color: var(--muted); }
-    form { display: grid; gap: 14px; }
+    .contact-intro {
+      background: linear-gradient(135deg, var(--navy), #0a2b75);
+      color: white;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+    .contact-intro::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
+      background: rgba(92,198,42,.22);
+      right: -52px;
+      top: -48px;
+    }
+    .contact-intro h3 { margin: 0 0 10px; font-size: 28px; line-height: 1.08; letter-spacing: -.03em; position: relative; z-index: 1; }
+    .contact-intro p { margin: 0 0 20px; color: rgba(255,255,255,.82); position: relative; z-index: 1; }
+    .contact-intro .btn { position: relative; z-index: 1; }
+    .contact-grid { display: grid; gap: 14px; }
+    .contact-line {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fbfdff;
+    }
+    .contact-line .icon {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      border-radius: 16px;
+      margin: 0;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .contact-line strong { display: block; color: var(--navy); margin-bottom: 2px; }
+    .contact-line span, .contact-line a { color: var(--muted); line-height: 1.45; }
+    .contact-form { display: grid; gap: 18px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-field { display: grid; gap: 7px; }
+    .form-field.full { grid-column: 1 / -1; }
     label { font-weight: 800; color: var(--navy); font-size: 14px; }
     input, textarea, select {
       width: 100%;
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 13px 14px;
+      padding: 14px 15px;
       font: inherit;
       background: #fbfdff;
       color: var(--ink);
     }
-    textarea { min-height: 130px; resize: vertical; }
-    .note { color: var(--muted); font-size: 13px; margin: 10px 0 0; }
+    textarea { min-height: 148px; resize: vertical; }
+    .note { color: var(--muted); font-size: 13px; margin: 0; }
 
     footer { background: var(--navy); color: white; padding: 34px 0; }
     footer .container { display: flex; justify-content: space-between; gap: 18px; align-items: center; flex-wrap: wrap; }
@@ -205,7 +249,7 @@
 
     @media (max-width: 860px) {
       .navlinks { display: none; }
-      .hero-grid, .split, .contact-wrap { grid-template-columns: 1fr; }
+      .hero-grid, .split, .contact-wrap, .form-grid { grid-template-columns: 1fr; }
       .cards { grid-template-columns: 1fr; }
       .process { grid-template-columns: 1fr 1fr; }
       section { padding: 58px 0; }
@@ -226,7 +270,7 @@
   <div class="topbar">
     <div class="container">
       <span>Staffing and consulting support for modern teams</span>
-      <span><a href="tel:+15139266663">(513) 926-6663</a> · <a href="#contact">Contact EZjobhop</a></span>
+      <span><a href="tel:+15712458076">(571) 245-8076</a> · <a href="mailto:alejandro@ezjobhop.com">alejandro@ezjobhop.com</a></span>
     </div>
   </div>
 
@@ -362,7 +406,7 @@
             <h2>Looking for your next role?</h2>
             <p>Send your resume and tell us what kind of opportunity you want. We support candidates across IT, healthcare, administrative, and public sector opportunities.</p>
           </div>
-          <a class="btn btn-primary" href="mailto:datawizetechllc@gmail.com?subject=EZjobhop%20Resume%20Submission">Submit Your Resume</a>
+          <a class="btn btn-primary" href="mailto:alejandro@ezjobhop.com?subject=EZjobhop%20Resume%20Submission">Submit Your Resume</a>
         </div>
         <div class="card">
           <h3>What to include</h3>
@@ -378,42 +422,60 @@
           <p>Tell us what kind of talent or opportunity you are looking for. We will follow up with the clearest next step.</p>
         </div>
         <div class="contact-wrap">
-          <div class="contact-card">
-            <div class="contact-line">
-              <div class="icon" aria-hidden="true">☎</div>
-              <div><strong>Phone</strong><a href="tel:+15139266663">(513) 926-6663</a></div>
+          <div>
+            <div class="contact-intro">
+              <h3>Ready to move on hiring?</h3>
+              <p>Send us the role, timeline, location, and hiring model. We will help you figure out the cleanest next step.</p>
+              <a class="btn btn-primary" href="tel:+15712458076">Call (571) 245-8076</a>
             </div>
-            <div class="contact-line">
-              <div class="icon" aria-hidden="true">✉</div>
-              <div><strong>Email</strong><a href="mailto:datawizetechllc@gmail.com">datawizetechllc@gmail.com</a></div>
-            </div>
-            <div class="contact-line">
-              <div class="icon" aria-hidden="true">⌖</div>
-              <div><strong>Address</strong><span>519 Seneca Green Way, Great Falls, VA 22066, USA</span></div>
+
+            <div class="contact-card contact-grid">
+              <div class="contact-line">
+                <div class="icon" aria-hidden="true">☎</div>
+                <div><strong>Phone</strong><a href="tel:+15712458076">(571) 245-8076</a></div>
+              </div>
+              <div class="contact-line">
+                <div class="icon" aria-hidden="true">✉</div>
+                <div><strong>Email</strong><a href="mailto:alejandro@ezjobhop.com">alejandro@ezjobhop.com</a></div>
+              </div>
+              <div class="contact-line">
+                <div class="icon" aria-hidden="true">⌂</div>
+                <div><strong>HQ</strong><span>756 Citation Way, Bakersfield, CA 93308</span></div>
+              </div>
+              <div class="contact-line">
+                <div class="icon" aria-hidden="true">⌖</div>
+                <div><strong>Location 1</strong><span>30 N Gould St, Sheridan, WY 82801</span></div>
+              </div>
+              <div class="contact-line">
+                <div class="icon" aria-hidden="true">⌖</div>
+                <div><strong>Location 2</strong><span>971 US Highway 202 N, Branchburg, NJ 08866</span></div>
+              </div>
             </div>
           </div>
 
           <div class="contact-card">
-            <form action="mailto:datawizetechllc@gmail.com" method="post" enctype="text/plain">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="Name" autocomplete="name" required />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="Email" type="email" autocomplete="email" required />
-              </div>
-              <div>
-                <label for="need">I am looking for</label>
-                <select id="need" name="Request Type">
-                  <option>Talent for my organization</option>
-                  <option>A new job opportunity</option>
-                  <option>General consulting support</option>
-                </select>
-              </div>
-              <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="Message" placeholder="Tell us about the role, project, timeline, or opportunity."></textarea>
+            <form class="contact-form" action="mailto:alejandro@ezjobhop.com" method="post" enctype="text/plain">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="name">Name</label>
+                  <input id="name" name="Name" autocomplete="name" required />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input id="email" name="Email" type="email" autocomplete="email" required />
+                </div>
+                <div class="form-field full">
+                  <label for="need">I am looking for</label>
+                  <select id="need" name="Request Type">
+                    <option>Talent for my organization</option>
+                    <option>A new job opportunity</option>
+                    <option>General consulting support</option>
+                  </select>
+                </div>
+                <div class="form-field full">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="Message" placeholder="Tell us about the role, project, timeline, or opportunity."></textarea>
+                </div>
               </div>
               <button class="btn btn-primary" type="submit">Send Message</button>
               <p class="note">This static form opens your email app. For a fully hosted form later, connect Formspree, Basin, Netlify Forms, or a CRM form endpoint.</p>
@@ -428,6 +490,7 @@
     <div class="container">
       <img src="assets/logo-mark.png" alt="EZjobhop mark" />
       <p>© <span id="year"></span> EZjobhop. All rights reserved.</p>
+      <p><a href="mailto:alejandro@ezjobhop.com">alejandro@ezjobhop.com</a> · <a href="tel:+15712458076">(571) 245-8076</a></p>
       <p><a href="#top">Back to top ↑</a></p>
     </div>
   </footer>
